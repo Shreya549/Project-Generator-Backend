@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'Accounts',
+    'Projects'
 ]
 
 AUTH_USER_MODEL = 'Accounts.User'
