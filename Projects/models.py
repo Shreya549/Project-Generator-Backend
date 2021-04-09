@@ -2,6 +2,9 @@ from django.db import models
 from uuid import uuid4
 import os, uuid
 
+from django.core.serializers.json import DjangoJSONEncoder
+from django.contrib.postgres.fields.jsonb import JSONField
+
 from Accounts.models import (
     User,
     Student
@@ -28,11 +31,13 @@ class MyProject(models.Model):
     end_date = models.DateField(null=True, blank=True)
     file = models.FileField(upload_to=path_and_rename)
     link = models.URLField(max_length=500, blank=True, null=True)
-    author = models.TextField()
+    author = models.TextField(null = True)
+    # author = JSONField(encoder = DjangoJSONEncoder, null = True)
+
     faculty = models.CharField(max_length=200)
     course_code = models.CharField(max_length=10)
     course_name = models.CharField(max_length=100)
     duration = models.CharField(max_length=200)
     description = models.TextField()
 
-    
+
