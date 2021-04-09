@@ -7,11 +7,13 @@ from .views import (
     UserLogin,
     # OTPCheckView,
     # OTPVerification,
-    # ChangePasswordView,
+    ChangePasswordView,
 )
 
 urlpatterns = [
     path('register-faculty/', FacultyRegistration.as_view()),
     path('register-student/', StudentRegistration.as_view()),
     path('login/', UserLogin.as_view()),
+    path('changePassword', ChangePasswordView.as_view()),
+
 ]
