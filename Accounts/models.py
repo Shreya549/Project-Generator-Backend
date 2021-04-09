@@ -55,8 +55,8 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def get_by_natural_key(self, empid):
-        return self.get(empid=empid)
+    def get_by_natural_key(self, uid):
+        return self.get(uid=uid)
 
 class FacultyManager(BaseUserManager):
 

@@ -34,7 +34,7 @@ class StudentRegistrationSerializer(serializers.ModelSerializer):
         auto_created = True
 
     def create(self, validated_data):
-        return Student.objects.create_hr(**validated_data)
+        return Student.objects.create_student(**validated_data)
 
 class UserLoginSerializer(serializers.Serializer):
     uid = serializers.CharField(max_length=15)
@@ -67,7 +67,7 @@ class UserLoginSerializer(serializers.Serializer):
         userObj = None
         ac_type = ''
         try:
-            userObj = Faculty.objects.get(empid=user.empid)
+            userObj = Faculty.objects.get(uid=user.uid)
             ac_type = 'Faculty'
 
         except Faculty.DoesNotExist:
@@ -75,7 +75,7 @@ class UserLoginSerializer(serializers.Serializer):
 
         try:
             if userObj is None:
-                userObj = Student.objects.get(empid=user.empid)
+                userObj = Student.objects.get(uid=user.uid)
                 ac_type = 'Student'
 
         except Student.DoesNotExist:
@@ -96,7 +96,7 @@ class UserLoginSerializer(serializers.Serializer):
         # This is the data that is passed to the `create` and `update` methods
         # that we will see later on.
         return {
-            'empid': user.empid,
+            'uid': user.uid,
             'token': user.token,
             'ac_type' : ac_type
         }
