@@ -18,7 +18,7 @@ env = environ.Env(
 )
 
 environ.Env.read_env()
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Achieve.settings.local")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "generator.settings.local")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
