@@ -2,7 +2,7 @@
 
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Shreya549/Project-Generator-Backend?logo=github&style=social)](https://github.com/Shreya549/) [![GitHub last commit](https://img.shields.io/github/last-commit/Shreya549/Project-Generator-Backend?style=social&logo=git)](https://github.com/Shreya549/) [![GitHub stars](https://img.shields.io/github/stars/Shreya549/Project-Generator-Backend?style=social)](https://github.com/Shreya549/Project-Generator-Backend/stargazers) [![GitHub forks](https://img.shields.io/github/forks/Shreya549/Project-Generator-Backend?style=social&logo=git)](https://github.com/Shreya549/Project-Generator-Backend/network)
 
-Backend of a portal that connects the Faculties to the HR Department of VIT, Vellore to ensure that the HRs have an updated knowledge of the professional life of the Faculties, so that they can help out better.
+Backend of a portal that helps VIT Faculties to have a look at the previous projects that the B.Tech Student has build during his course.
 <br>
 
 <img src = https://github.com/Shreya549/Project-Generator-Backend/blob/master/homepage.png width = 80%/>
