@@ -11,7 +11,7 @@ from Accounts.models import (
 )
 
 def path_and_rename(instance, filename):
-    upload_to = 'files'
+    upload_to = 'staticfiles/files'
     ext = filename.split('.')[-1]
     # get filename
     if instance.pk:
