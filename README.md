@@ -15,7 +15,7 @@ Backend of a portal that helps VIT Faculties to have a look at the previous proj
 ```
 $ git clone https://github.com/Shreya549/generator
 $ cd generator
-$ pip install requirements.txt
+$ pip install -r requirements.txt
 $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py runserver
