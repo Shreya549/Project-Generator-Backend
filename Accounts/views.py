@@ -53,13 +53,10 @@ class StudentRegistration(APIView):
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
 
-        try:
-            serializer.is_valid()
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        serializer.is_valid()
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-        except:
-            return Response({"error" : "Registration already exists"}, status = 403)  
 
 class UserLogin(APIView):
     permission_classes = (permissions.AllowAny,)
