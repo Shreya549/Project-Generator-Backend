@@ -5,7 +5,7 @@
 Backend of a portal that helps VIT Faculties to have a look at the previous projects that the B.Tech Student has build during his course.
 <br>
 
-<img src = https://github.com/Shreya549/Project-Generator-Backend/blob/master/homepage.png width = 80%/>
+<img src = https://github.com/Shreya549/Project-Generator-Backend/blob/main/progen.png width = 70%/>
 
 
 #### API Documentation
