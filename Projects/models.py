@@ -29,7 +29,6 @@ class MyProject(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     start_date = models.DateField(null = True, blank = True)
     end_date = models.DateField(null=True, blank=True)
-    file = models.FileField(upload_to=path_and_rename, null = True, blank=True)
     link = models.URLField(max_length=500, blank=True, null=True)
     author = models.TextField(null = True, blank=True)
     # author = JSONField(encoder = DjangoJSONEncoder, null = True)
