@@ -38,6 +38,6 @@ class MyProject(models.Model):
     course_code = models.CharField(max_length=10)
     course_name = models.CharField(max_length=100)
     duration = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(null = True, blank=True)
 
 
