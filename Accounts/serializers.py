@@ -69,6 +69,8 @@ class UserLoginSerializer(serializers.Serializer):
         try:
             userObj = Faculty.objects.get(uid=user.uid)
             ac_type = 'Faculty'
+            email = userObj.email
+            name = userObj.name
 
         except Faculty.DoesNotExist:
             userObj = None
@@ -76,6 +78,8 @@ class UserLoginSerializer(serializers.Serializer):
         try:
             if userObj is None:
                 userObj = Student.objects.get(uid=user.uid)
+                email = userObj.email
+                name = userObj.name
                 ac_type = 'Student'
 
         except Student.DoesNotExist:
@@ -99,8 +103,8 @@ class UserLoginSerializer(serializers.Serializer):
             'uid': user.uid,
             'token': user.token,
             'ac_type' : ac_type,
-            'email' : user.email,
-            'name' : user.name
+            'email' : email,
+            'name' : name
         }
 
 class OTPStoreSerializer(serializers.ModelSerializer):
