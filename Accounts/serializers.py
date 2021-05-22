@@ -38,6 +38,8 @@ class StudentRegistrationSerializer(serializers.ModelSerializer):
 
 class UserLoginSerializer(serializers.Serializer):
     uid = serializers.CharField(max_length=15)
+    email = serializers.EmailField()
+    name = models.CharField(max_length=100)
     password = serializers.CharField(max_length=128, write_only=True)
     token = serializers.CharField(max_length=255, read_only=True)
     ac_type = serializers.CharField(max_length = 50, read_only=True)
@@ -98,7 +100,9 @@ class UserLoginSerializer(serializers.Serializer):
         return {
             'uid': user.uid,
             'token': user.token,
-            'ac_type' : ac_type
+            'ac_type' : ac_type,
+            'email' : user.email,
+            'name' : user.name
         }
 
 class OTPStoreSerializer(serializers.ModelSerializer):
