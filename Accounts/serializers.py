@@ -38,6 +38,8 @@ class StudentRegistrationSerializer(serializers.ModelSerializer):
 
 class UserLoginSerializer(serializers.Serializer):
     uid = serializers.CharField(max_length=15)
+    name = serializers.CharField(max_length=100, read_only=True)    
+    email = serializers.EmailField(read_only=True)
     password = serializers.CharField(max_length=128, write_only=True)
     token = serializers.CharField(max_length=255, read_only=True)
     ac_type = serializers.CharField(max_length = 50, read_only=True)
