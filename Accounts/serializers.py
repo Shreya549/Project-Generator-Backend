@@ -103,6 +103,7 @@ class UserLoginSerializer(serializers.Serializer):
             'uid': user.uid,
             'token': user.token,
             'ac_type' : ac_type,
+            'random' : "hello",
             'email' : email,
             'name' : name
         }
