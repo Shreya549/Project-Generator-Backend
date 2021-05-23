@@ -34,6 +34,7 @@ class MyProject(models.Model):
     # author = JSONField(encoder = DjangoJSONEncoder, null = True)
 
     faculty = models.CharField(max_length=200)
+    facultyId = models.CharField(max_length = 5, null = True, blank = True)
     course_code = models.CharField(max_length=10)
     course_name = models.CharField(max_length=100)
     duration = models.CharField(max_length=200)
