@@ -45,7 +45,13 @@ class ViewProjectViewSet(viewsets.ModelViewSet):
         regno = self.request.GET.get('regno')
         user = Student.objects.get(uid=regno)
         return MyProject.objects.filter(owner = user)
-        
+
+class MyProjectsViewSet(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = MyProjectSerializer
+
+    def get_queryset(self):
+        return MyProject.objects.filter(facultyId = user.uid)
 
 
 
