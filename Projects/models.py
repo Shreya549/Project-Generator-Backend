@@ -32,7 +32,7 @@ class MyProject(models.Model):
     link = models.URLField(max_length=500, blank=True, null=True)
     author = models.TextField(null = True, blank=True)
     # author = JSONField(encoder = DjangoJSONEncoder, null = True)
-
+    domain = models.CharField(max_length = 100, null = True, blank = True)
     faculty = models.CharField(max_length=200)
     facultyId = models.CharField(max_length = 5, null = True, blank = True)
     course_code = models.CharField(max_length=10)
