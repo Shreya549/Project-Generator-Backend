@@ -51,7 +51,7 @@ class MyProjectsViewSet(viewsets.ModelViewSet):
     serializer_class = MyProjectSerializer
 
     def get_queryset(self):
-        return MyProject.objects.filter(facultyId = user.uid)
+        return MyProject.objects.filter(facultyId = self.request.user.uid)
 
 
 
