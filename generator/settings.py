@@ -67,7 +67,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'generator.urls'
 
-CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = ['https://joshijai2.github.io', '*']
+CORS_ALLOW_CREDENTIALS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
