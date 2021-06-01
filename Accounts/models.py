@@ -147,6 +147,13 @@ class Student(User, PermissionsMixin):
     def __str__(self):
         return self.name
 
+class Contact(models.Model):
+    uuid = models.UUIDField(default=uuid.uuid4, primary_key=True)
+    name = models.CharField(max_length = 100)
+    email = models.EmailField()
+    subject = models.CharField(max_length = 200)
+    message = models.TextField()
+
 class OTPStore(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, primary_key = True)
     email = models.EmailField()

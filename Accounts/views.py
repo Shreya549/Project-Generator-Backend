@@ -8,6 +8,7 @@ from .models import (
     Faculty,
     Student,
     OTPStore,
+    Contact,
 )
 
 from rest_framework.views import APIView
@@ -21,6 +22,7 @@ from .serializers import (
     StudentRegistrationSerializer,
     UserLoginSerializer,
     ChangePasswordSerializer,
+    ContactSerializer,
 )
 
 import uuid, os, base64, environ
@@ -57,6 +59,11 @@ class StudentRegistration(APIView):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+class ContactUsView(viewsets.ModelViewSet):
+    serializer_class = ContactSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
 
 class UserLogin(APIView):
     permission_classes = (permissions.AllowAny,)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Faculty, Student, OTPStore
+from .models import User, Faculty, Student, OTPStore, Contact
 from django.contrib.auth import authenticate, password_validation
 
 from rest_framework.response import Response
@@ -114,6 +114,11 @@ class OTPStoreSerializer(serializers.ModelSerializer):
         model = OTPStore
         fields = '__all__'
         read_only_fields = '__all__'
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'
 
 class ChangePasswordSerializer(serializers.Serializer):
     model = User

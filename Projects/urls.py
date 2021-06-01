@@ -4,7 +4,7 @@ from rest_framework.routers import SimpleRouter
 from .views import (
     ProjectViewSet,
     ViewProjectViewSet,
-    MyProjectsViewSet
+    MyProjectsViewSet,
 )
 
 router = SimpleRouter()
